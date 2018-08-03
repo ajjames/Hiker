@@ -1,0 +1,9 @@
+xcuserdata
+.DS_Store
+screenshots
+.irb-history
+.idea
+*.xccheckout
+ profile
+ DerivedData
+ Pods/

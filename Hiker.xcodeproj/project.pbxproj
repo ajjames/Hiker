@@ -7,13 +7,20 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		214E46912114D64000698212 /* UserLocation+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 214E468F2114D64000698212 /* UserLocation+CoreDataClass.swift */; };
+		214E46922114D64000698212 /* UserLocation+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 214E46902114D64000698212 /* UserLocation+CoreDataProperties.swift */; };
 		21C12A1021137F43001B9169 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21C12A0F21137F43001B9169 /* AppDelegate.swift */; };
-		21C12A1221137F43001B9169 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21C12A1121137F43001B9169 /* ViewController.swift */; };
+		21C12A1221137F43001B9169 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21C12A1121137F43001B9169 /* MapViewController.swift */; };
 		21C12A1521137F43001B9169 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 21C12A1321137F43001B9169 /* Main.storyboard */; };
 		21C12A1821137F43001B9169 /* Hiker.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 21C12A1621137F43001B9169 /* Hiker.xcdatamodeld */; };
 		21C12A1A21137F43001B9169 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 21C12A1921137F43001B9169 /* Assets.xcassets */; };
 		21C12A1D21137F43001B9169 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 21C12A1B21137F43001B9169 /* LaunchScreen.storyboard */; };
 		21C12A2821137F44001B9169 /* HikerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21C12A2721137F44001B9169 /* HikerTests.swift */; };
+		21C12A3E21138485001B9169 /* LocationStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21C12A3D21138485001B9169 /* LocationStorage.swift */; };
+		21C12A442113992A001B9169 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21C12A432113992A001B9169 /* SettingsViewController.swift */; };
+		21C12A462113A9CE001B9169 /* LocationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21C12A452113A9CE001B9169 /* LocationViewController.swift */; };
+		21C12A492113ABAA001B9169 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 21C12A482113ABAA001B9169 /* MapKit.framework */; };
+		21C12A4C2113D359001B9169 /* LocationEngine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21C12A4B2113D359001B9169 /* LocationEngine.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -27,9 +34,11 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		214E468F2114D64000698212 /* UserLocation+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UserLocation+CoreDataClass.swift"; sourceTree = "<group>"; };
+		214E46902114D64000698212 /* UserLocation+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UserLocation+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		21C12A0C21137F43001B9169 /* Hiker.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Hiker.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		21C12A0F21137F43001B9169 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		21C12A1121137F43001B9169 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		21C12A1121137F43001B9169 /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
 		21C12A1421137F43001B9169 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		21C12A1721137F43001B9169 /* Hiker.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Hiker.xcdatamodel; sourceTree = "<group>"; };
 		21C12A1921137F43001B9169 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -38,6 +47,11 @@
 		21C12A2321137F44001B9169 /* HikerTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = HikerTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		21C12A2721137F44001B9169 /* HikerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HikerTests.swift; sourceTree = "<group>"; };
 		21C12A2921137F44001B9169 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		21C12A3D21138485001B9169 /* LocationStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationStorage.swift; sourceTree = "<group>"; };
+		21C12A432113992A001B9169 /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
+		21C12A452113A9CE001B9169 /* LocationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationViewController.swift; sourceTree = "<group>"; };
+		21C12A482113ABAA001B9169 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
+		21C12A4B2113D359001B9169 /* LocationEngine.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationEngine.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -45,6 +59,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				21C12A492113ABAA001B9169 /* MapKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -64,6 +79,7 @@
 				21C12A0E21137F43001B9169 /* Hiker */,
 				21C12A2621137F44001B9169 /* HikerTests */,
 				21C12A0D21137F43001B9169 /* Products */,
+				21C12A472113ABAA001B9169 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -79,13 +95,9 @@
 		21C12A0E21137F43001B9169 /* Hiker */ = {
 			isa = PBXGroup;
 			children = (
-				21C12A0F21137F43001B9169 /* AppDelegate.swift */,
-				21C12A1121137F43001B9169 /* ViewController.swift */,
-				21C12A1321137F43001B9169 /* Main.storyboard */,
-				21C12A1921137F43001B9169 /* Assets.xcassets */,
-				21C12A1B21137F43001B9169 /* LaunchScreen.storyboard */,
-				21C12A1E21137F43001B9169 /* Info.plist */,
-				21C12A1621137F43001B9169 /* Hiker.xcdatamodeld */,
+				21C12A3221137F4A001B9169 /* Resource */,
+				21C12A3421137F7B001B9169 /* Source */,
+				21C12A3321137F6F001B9169 /* Storyboard */,
 			);
 			path = Hiker;
 			sourceTree = "<group>";
@@ -97,6 +109,88 @@
 				21C12A2921137F44001B9169 /* Info.plist */,
 			);
 			path = HikerTests;
+			sourceTree = "<group>";
+		};
+		21C12A3221137F4A001B9169 /* Resource */ = {
+			isa = PBXGroup;
+			children = (
+				21C12A1921137F43001B9169 /* Assets.xcassets */,
+				21C12A1621137F43001B9169 /* Hiker.xcdatamodeld */,
+				21C12A1E21137F43001B9169 /* Info.plist */,
+			);
+			name = Resource;
+			sourceTree = "<group>";
+		};
+		21C12A3321137F6F001B9169 /* Storyboard */ = {
+			isa = PBXGroup;
+			children = (
+				21C12A1B21137F43001B9169 /* LaunchScreen.storyboard */,
+				21C12A1321137F43001B9169 /* Main.storyboard */,
+			);
+			name = Storyboard;
+			sourceTree = "<group>";
+		};
+		21C12A3421137F7B001B9169 /* Source */ = {
+			isa = PBXGroup;
+			children = (
+				21C12A3F2113848B001B9169 /* Persistence */,
+				21C12A4221139088001B9169 /* Delegates */,
+				21C12A4A2113D342001B9169 /* Engine */,
+				21C12A4121139062001B9169 /* ViewController */,
+			);
+			name = Source;
+			sourceTree = "<group>";
+		};
+		21C12A39211380DB001B9169 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				214E468F2114D64000698212 /* UserLocation+CoreDataClass.swift */,
+				214E46902114D64000698212 /* UserLocation+CoreDataProperties.swift */,
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
+		21C12A3F2113848B001B9169 /* Persistence */ = {
+			isa = PBXGroup;
+			children = (
+				21C12A39211380DB001B9169 /* Model */,
+				21C12A3D21138485001B9169 /* LocationStorage.swift */,
+			);
+			name = Persistence;
+			sourceTree = "<group>";
+		};
+		21C12A4121139062001B9169 /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				21C12A1121137F43001B9169 /* MapViewController.swift */,
+				21C12A432113992A001B9169 /* SettingsViewController.swift */,
+				21C12A452113A9CE001B9169 /* LocationViewController.swift */,
+			);
+			name = ViewController;
+			sourceTree = "<group>";
+		};
+		21C12A4221139088001B9169 /* Delegates */ = {
+			isa = PBXGroup;
+			children = (
+				21C12A0F21137F43001B9169 /* AppDelegate.swift */,
+			);
+			name = Delegates;
+			sourceTree = "<group>";
+		};
+		21C12A472113ABAA001B9169 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				21C12A482113ABAA001B9169 /* MapKit.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		21C12A4A2113D342001B9169 /* Engine */ = {
+			isa = PBXGroup;
+			children = (
+				21C12A4B2113D359001B9169 /* LocationEngine.swift */,
+			);
+			name = Engine;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -149,6 +243,11 @@
 				TargetAttributes = {
 					21C12A0B21137F43001B9169 = {
 						CreatedOnToolsVersion = 9.4.1;
+						SystemCapabilities = {
+							com.apple.Maps.iOS = {
+								enabled = 1;
+							};
+						};
 					};
 					21C12A2221137F44001B9169 = {
 						CreatedOnToolsVersion = 9.4.1;
@@ -200,9 +299,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				21C12A1221137F43001B9169 /* ViewController.swift in Sources */,
+				21C12A1221137F43001B9169 /* MapViewController.swift in Sources */,
 				21C12A1821137F43001B9169 /* Hiker.xcdatamodeld in Sources */,
+				21C12A4C2113D359001B9169 /* LocationEngine.swift in Sources */,
 				21C12A1021137F43001B9169 /* AppDelegate.swift in Sources */,
+				21C12A3E21138485001B9169 /* LocationStorage.swift in Sources */,
+				21C12A462113A9CE001B9169 /* LocationViewController.swift in Sources */,
+				214E46912114D64000698212 /* UserLocation+CoreDataClass.swift in Sources */,
+				214E46922114D64000698212 /* UserLocation+CoreDataProperties.swift in Sources */,
+				21C12A442113992A001B9169 /* SettingsViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
