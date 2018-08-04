@@ -7,29 +7,37 @@
 //
 
 import XCTest
+import MapKit
 @testable import Hiker
 
 class HikerTests: XCTestCase {
     
     override func setUp() {
         super.setUp()
-        // Put setup code here. This method is called before the invocation of each test method in the class.
     }
     
     override func tearDown() {
-        // Put teardown code here. This method is called after the invocation of each test method in the class.
         super.tearDown()
     }
     
-    func testExample() {
-        // This is an example of a functional test case.
-        // Use XCTAssert and related functions to verify your tests produce the correct results.
-    }
-    
-    func testPerformanceExample() {
-        // This is an example of a performance test case.
-        self.measure {
-            // Put the code you want to measure the time of here.
+    func test_MKAnnotationExtension() {
+        
+        let expected = "Lat:  37.34092739\nLong: -122.08983097\n\n\nname: I-280 N\naddress1: I-280 N\naddress2: \ncity: Los Altos\nstate: CA\nzip code: 94024\ncountry: United States\nareasOfInterest: "
+        
+        let annotation = MKPointAnnotation()
+        annotation.coordinate = CLLocationCoordinate2D(latitude: 37.34092739, longitude: -122.08983097)
+        
+        let expetation = expectation(description: #function)
+        var actual: String?
+        
+        annotation.detail { text in
+            actual = text
+            expetation.fulfill()
+        }
+        
+        waitForExpectations(timeout: 3) { error in
+            XCTAssertNil(error)
+            XCTAssertEqual(expected, actual)
         }
     }
     

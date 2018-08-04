@@ -4,6 +4,8 @@
 <dict>
 	<key>CFBundleDevelopmentRegion</key>
 	<string>$(DEVELOPMENT_LANGUAGE)</string>
+	<key>CFBundleDocumentTypes</key>
+	<array/>
 	<key>CFBundleExecutable</key>
 	<string>$(EXECUTABLE_NAME)</string>
 	<key>CFBundleIdentifier</key>
@@ -20,12 +22,16 @@
 	<string>1</string>
 	<key>LSRequiresIPhoneOS</key>
 	<true/>
+	<key>NSLocationAlwaysAndWhenInUseUsageDescription</key>
+	<string>Hiker tracks and stores your location in the app. 'Always Allow' is necessary for tracking to work while the app is in the background</string>
 	<key>NSLocationAlwaysUsageDescription</key>
-	<string>Hiker tracks and stores your location in the app. &apos;Always Allow&apos; is necessary for tracking to work while the app is in the background</string>
+	<string>Hiker tracks and stores your location in the app. 'Always Allow' is necessary for tracking to work while the app is in the background</string>
 	<key>NSLocationWhenInUseUsageDescription</key>
 	<string>Hiker tracks and stores your location in the app while you are using the app</string>
-	<key>NSLocationAlwaysAndWhenInUseUsageDescription</key>
-	<string>Hiker tracks and stores your location in the app. &apos;Always Allow&apos; is necessary for tracking to work while the app is in the background</string>
+	<key>UIBackgroundModes</key>
+	<array>
+		<string>location</string>
+	</array>
 	<key>UILaunchStoryboardName</key>
 	<string>LaunchScreen</string>
 	<key>UIMainStoryboardFile</key>

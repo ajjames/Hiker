@@ -9,22 +9,39 @@
 import UIKit
 
 class SettingsViewController: UIViewController {
-
+    
     @IBOutlet weak var blurView: UIVisualEffectView!
+    @IBOutlet weak var recordCountLabel: UILabel!
+    lazy var locationEngine: LocationEngine = .shared
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        updateUI()
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        listenForNewData()
     }
-    */
-
+    
+    override func viewDidDisappear(_ animated: Bool) {
+        super.viewDidDisappear(animated)
+        NotificationCenter.default.removeObserver(self)
+    }
+    
+    private func listenForNewData() {
+        NotificationCenter.default.addObserver(self, selector: #selector(updateUI), name: .NSManagedObjectContextDidSave, object: nil)
+    }
+    
+    @objc private func updateUI() {
+        DispatchQueue.main.async { [unowned self] in
+            let countOfRecords = self.locationEngine.storedLocations().count
+            self.recordCountLabel.text = "\(countOfRecords)"
+        }
+    }
+    
+    @IBAction func didTouchClearDataButton(_ sender: Any) {
+        locationEngine.clearAllLocations()
+        updateUI()
+    }
 }

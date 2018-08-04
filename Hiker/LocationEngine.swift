@@ -16,23 +16,35 @@ class LocationEngine: NSObject, CLLocationManagerDelegate {
     lazy var locationManager: CLLocationManager = {
         let manager = CLLocationManager()
         manager.delegate = self
+        manager.desiredAccuracy = kCLLocationAccuracyBest
+        manager.activityType = .fitness
+        manager.distanceFilter = 100.0
         return manager
     }()
     
     lazy var locationStorage: Persistence.LocationStorage = Persistence.LocationStorage()
     
     private override init() { }
-
-    func requestAuthorization() {
-        locationManager.requestAlwaysAuthorization()
+    
+    func clearAllLocations() {
+        locationStorage.clearAllLocations()
     }
     
     func startUpdatingLocation() {
+        requestAuthorization()
         locationManager.startUpdatingLocation()
     }
     
-    func significantLocationChangeMonitoringAvailable() -> Bool {
-        return CLLocationManager.significantLocationChangeMonitoringAvailable()
+    func locationServicesEnabled() -> Bool {
+        return CLLocationManager.locationServicesEnabled()
+    }
+    
+    func storedLocations() -> [UserLocation] {
+        return locationStorage.fetchLocations()
+    }
+    
+    private func requestAuthorization() {
+        locationManager.requestAlwaysAuthorization()
     }
     
     //MARK: CLLocationManagerDelegate

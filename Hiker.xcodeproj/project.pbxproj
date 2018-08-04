@@ -7,8 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		214E46912114D64000698212 /* UserLocation+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 214E468F2114D64000698212 /* UserLocation+CoreDataClass.swift */; };
-		214E46922114D64000698212 /* UserLocation+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 214E46902114D64000698212 /* UserLocation+CoreDataProperties.swift */; };
+		214E46952115434000698212 /* MKAnnotation+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 214E46942115434000698212 /* MKAnnotation+Extension.swift */; };
+		214E4698211546B500698212 /* UserLocation+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 214E4696211546B500698212 /* UserLocation+CoreDataClass.swift */; };
+		214E4699211546B500698212 /* UserLocation+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 214E4697211546B500698212 /* UserLocation+CoreDataProperties.swift */; };
+		219A19592115A1A800FA8408 /* DateFormatter+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 219A19582115A1A800FA8408 /* DateFormatter+Extension.swift */; };
 		21C12A1021137F43001B9169 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21C12A0F21137F43001B9169 /* AppDelegate.swift */; };
 		21C12A1221137F43001B9169 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21C12A1121137F43001B9169 /* MapViewController.swift */; };
 		21C12A1521137F43001B9169 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 21C12A1321137F43001B9169 /* Main.storyboard */; };
@@ -18,7 +20,6 @@
 		21C12A2821137F44001B9169 /* HikerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21C12A2721137F44001B9169 /* HikerTests.swift */; };
 		21C12A3E21138485001B9169 /* LocationStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21C12A3D21138485001B9169 /* LocationStorage.swift */; };
 		21C12A442113992A001B9169 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21C12A432113992A001B9169 /* SettingsViewController.swift */; };
-		21C12A462113A9CE001B9169 /* LocationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21C12A452113A9CE001B9169 /* LocationViewController.swift */; };
 		21C12A492113ABAA001B9169 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 21C12A482113ABAA001B9169 /* MapKit.framework */; };
 		21C12A4C2113D359001B9169 /* LocationEngine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21C12A4B2113D359001B9169 /* LocationEngine.swift */; };
 /* End PBXBuildFile section */
@@ -34,8 +35,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		214E468F2114D64000698212 /* UserLocation+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UserLocation+CoreDataClass.swift"; sourceTree = "<group>"; };
-		214E46902114D64000698212 /* UserLocation+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UserLocation+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		214E46942115434000698212 /* MKAnnotation+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MKAnnotation+Extension.swift"; sourceTree = "<group>"; };
+		214E4696211546B500698212 /* UserLocation+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UserLocation+CoreDataClass.swift"; sourceTree = "<group>"; };
+		214E4697211546B500698212 /* UserLocation+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UserLocation+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		219A19582115A1A800FA8408 /* DateFormatter+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DateFormatter+Extension.swift"; sourceTree = "<group>"; };
 		21C12A0C21137F43001B9169 /* Hiker.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Hiker.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		21C12A0F21137F43001B9169 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		21C12A1121137F43001B9169 /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
@@ -49,7 +52,6 @@
 		21C12A2921137F44001B9169 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		21C12A3D21138485001B9169 /* LocationStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationStorage.swift; sourceTree = "<group>"; };
 		21C12A432113992A001B9169 /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
-		21C12A452113A9CE001B9169 /* LocationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationViewController.swift; sourceTree = "<group>"; };
 		21C12A482113ABAA001B9169 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		21C12A4B2113D359001B9169 /* LocationEngine.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationEngine.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -73,6 +75,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		214E469321151F0900698212 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				214E46942115434000698212 /* MKAnnotation+Extension.swift */,
+				219A19582115A1A800FA8408 /* DateFormatter+Extension.swift */,
+			);
+			name = Extensions;
+			sourceTree = "<group>";
+		};
 		21C12A0321137F43001B9169 = {
 			isa = PBXGroup;
 			children = (
@@ -133,9 +144,10 @@
 		21C12A3421137F7B001B9169 /* Source */ = {
 			isa = PBXGroup;
 			children = (
-				21C12A3F2113848B001B9169 /* Persistence */,
 				21C12A4221139088001B9169 /* Delegates */,
 				21C12A4A2113D342001B9169 /* Engine */,
+				214E469321151F0900698212 /* Extensions */,
+				21C12A3F2113848B001B9169 /* Persistence */,
 				21C12A4121139062001B9169 /* ViewController */,
 			);
 			name = Source;
@@ -144,8 +156,8 @@
 		21C12A39211380DB001B9169 /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				214E468F2114D64000698212 /* UserLocation+CoreDataClass.swift */,
-				214E46902114D64000698212 /* UserLocation+CoreDataProperties.swift */,
+				214E4696211546B500698212 /* UserLocation+CoreDataClass.swift */,
+				214E4697211546B500698212 /* UserLocation+CoreDataProperties.swift */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -164,7 +176,6 @@
 			children = (
 				21C12A1121137F43001B9169 /* MapViewController.swift */,
 				21C12A432113992A001B9169 /* SettingsViewController.swift */,
-				21C12A452113A9CE001B9169 /* LocationViewController.swift */,
 			);
 			name = ViewController;
 			sourceTree = "<group>";
@@ -244,6 +255,9 @@
 					21C12A0B21137F43001B9169 = {
 						CreatedOnToolsVersion = 9.4.1;
 						SystemCapabilities = {
+							com.apple.BackgroundModes = {
+								enabled = 1;
+							};
 							com.apple.Maps.iOS = {
 								enabled = 1;
 							};
@@ -301,12 +315,13 @@
 			files = (
 				21C12A1221137F43001B9169 /* MapViewController.swift in Sources */,
 				21C12A1821137F43001B9169 /* Hiker.xcdatamodeld in Sources */,
+				214E46952115434000698212 /* MKAnnotation+Extension.swift in Sources */,
 				21C12A4C2113D359001B9169 /* LocationEngine.swift in Sources */,
 				21C12A1021137F43001B9169 /* AppDelegate.swift in Sources */,
 				21C12A3E21138485001B9169 /* LocationStorage.swift in Sources */,
-				21C12A462113A9CE001B9169 /* LocationViewController.swift in Sources */,
-				214E46912114D64000698212 /* UserLocation+CoreDataClass.swift in Sources */,
-				214E46922114D64000698212 /* UserLocation+CoreDataProperties.swift in Sources */,
+				214E4698211546B500698212 /* UserLocation+CoreDataClass.swift in Sources */,
+				214E4699211546B500698212 /* UserLocation+CoreDataProperties.swift in Sources */,
+				219A19592115A1A800FA8408 /* DateFormatter+Extension.swift in Sources */,
 				21C12A442113992A001B9169 /* SettingsViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -470,11 +485,12 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = SFL54KSM55;
 				INFOPLIST_FILE = Hiker/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.4;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = aj.com.Hiker;
+				PRODUCT_BUNDLE_IDENTIFIER = com.aj.Hiker;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -488,11 +504,12 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = SFL54KSM55;
 				INFOPLIST_FILE = Hiker/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.4;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = aj.com.Hiker;
+				PRODUCT_BUNDLE_IDENTIFIER = com.aj.Hiker;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";

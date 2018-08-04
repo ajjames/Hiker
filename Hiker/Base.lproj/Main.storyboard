@@ -4,37 +4,58 @@
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
-        <deployment identifier="iOS"/>
+        <deployment version="4400" identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="Stack View standard spacing" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
         <!--HIKER 🏃‍♂️-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController storyboardIdentifier="MapViewController" id="BYZ-38-t0r" customClass="MapViewController" customModule="Hiker" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="MapViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="BYZ-38-t0r" customClass="MapViewController" customModule="Hiker" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" showsUserLocation="YES" showsPointsOfInterest="NO" translatesAutoresizingMaskIntoConstraints="NO" id="d1b-dR-RnN">
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="KGx-1T-ApM">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                                <connections>
-                                    <outlet property="delegate" destination="BYZ-38-t0r" id="cUV-OX-xYl"/>
-                                </connections>
-                            </mapView>
+                                <subviews>
+                                    <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" pitchEnabled="NO" showsUserLocation="YES" showsPointsOfInterest="NO" translatesAutoresizingMaskIntoConstraints="NO" id="d1b-dR-RnN">
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                        <connections>
+                                            <outlet property="delegate" destination="BYZ-38-t0r" id="cUV-OX-xYl"/>
+                                        </connections>
+                                    </mapView>
+                                    <textView hidden="YES" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsVerticalScrollIndicator="NO" editable="NO" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="KI7-wr-MU7">
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="400"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                        <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                    </textView>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="KI7-wr-MU7" firstAttribute="height" secondItem="KGx-1T-ApM" secondAttribute="height" multiplier="0.6" id="Ytc-Xx-23n"/>
+                                </constraints>
+                            </stackView>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="d1b-dR-RnN" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="60j-ZT-ISo"/>
-                            <constraint firstItem="d1b-dR-RnN" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailing" id="AgL-2l-61J"/>
-                            <constraint firstItem="d1b-dR-RnN" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="anq-LS-AT4"/>
-                            <constraint firstItem="d1b-dR-RnN" firstAttribute="bottom" secondItem="8bC-Xf-vdC" secondAttribute="bottom" id="dIq-kh-JXk"/>
+                            <constraint firstItem="KGx-1T-ApM" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="3Hf-Hk-71B"/>
+                            <constraint firstItem="KGx-1T-ApM" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="4bT-RA-34g"/>
+                            <constraint firstItem="KGx-1T-ApM" firstAttribute="bottom" secondItem="8bC-Xf-vdC" secondAttribute="bottom" id="7r6-B8-sh1"/>
+                            <constraint firstItem="KGx-1T-ApM" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailing" id="zKZ-0k-Ykr"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <navigationItem key="navigationItem" title="HIKER 🏃‍♂️" id="ieS-bh-Zk6">
+                        <barButtonItem key="leftBarButtonItem" title="Item" image="gps_marker" id="xGb-F9-Z6a">
+                            <connections>
+                                <action selector="didTapGpsMarkerButton:" destination="BYZ-38-t0r" id="Fuo-hm-iTr"/>
+                            </connections>
+                        </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" image="settings" id="W0e-w3-XZF">
                             <connections>
                                 <segue destination="vwP-el-KB5" kind="presentation" modalPresentationStyle="overFullScreen" id="Hih-lv-3HP"/>
@@ -42,8 +63,10 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
+                        <outlet property="detailText" destination="KI7-wr-MU7" id="49v-Qo-4sY"/>
+                        <outlet property="gpsLocationButton" destination="xGb-F9-Z6a" id="Ykl-07-LEw"/>
                         <outlet property="mapView" destination="d1b-dR-RnN" id="jIB-D8-wdg"/>
-                        <segue destination="28J-AL-bAT" kind="presentation" identifier="showDetail" id="8Us-eq-RMw"/>
+                        <outlet property="settingsButton" destination="W0e-w3-XZF" id="M5F-la-h21"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -53,7 +76,7 @@
         <!--Settings View Controller-->
         <scene sceneID="tXw-Jv-3zd">
             <objects>
-                <viewController storyboardIdentifier="SettingsViewController" id="vwP-el-KB5" customClass="SettingsViewController" customModule="Hiker" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="SettingsViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="vwP-el-KB5" customClass="SettingsViewController" customModule="Hiker" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="WsZ-Nq-0U8">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -64,7 +87,7 @@
                                     <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                     <subviews>
-                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qu7-sz-cIq">
+                                        <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="1000" verticalHuggingPriority="1000" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qu7-sz-cIq">
                                             <rect key="frame" x="324" y="28" width="41" height="33"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <state key="normal" title="Done"/>
@@ -72,30 +95,69 @@
                                                 <segue destination="pe1-Xj-X0r" kind="unwind" unwindAction="unwindToMap:" id="rgr-if-wOj"/>
                                             </connections>
                                         </button>
+                                        <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacingType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="Y2c-JL-s8v">
+                                            <rect key="frame" x="8" y="69" width="359" height="168"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Settings" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gLx-bd-0nI">
+                                                    <rect key="frame" x="0.0" y="0.0" width="359" height="36"/>
+                                                    <fontDescription key="fontDescription" name="ArialRoundedMTBold" family="Arial Rounded MT Bold" pointSize="24"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Current number of stored records" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5Oh-KP-BT2">
+                                                    <rect key="frame" x="0.0" y="44" width="359" height="36"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iSx-FV-1lm">
+                                                    <rect key="frame" x="0.0" y="88" width="359" height="36"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="X56-dG-Q2H">
+                                                    <rect key="frame" x="0.0" y="132" width="359" height="36"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                                    <state key="normal" title="Clear Data"/>
+                                                    <connections>
+                                                        <action selector="didTouchClearDataButton:" destination="vwP-el-KB5" eventType="touchUpInside" id="t5y-aU-FoR"/>
+                                                    </connections>
+                                                </button>
+                                            </subviews>
+                                        </stackView>
                                     </subviews>
+                                    <constraints>
+                                        <constraint firstItem="qu7-sz-cIq" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="yV5-Mn-dNa" secondAttribute="leading" constant="10" id="FPe-vP-U8Y"/>
+                                        <constraint firstItem="Y2c-JL-s8v" firstAttribute="top" secondItem="qu7-sz-cIq" secondAttribute="bottom" constant="8" id="JBU-wI-t8q"/>
+                                    </constraints>
                                 </view>
                                 <blurEffect style="light"/>
                             </visualEffectView>
                         </subviews>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
+                            <constraint firstItem="0ax-8F-L3h" firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="Y2c-JL-s8v" secondAttribute="bottom" id="1cu-mw-ddT"/>
                             <constraint firstAttribute="bottom" secondItem="ZjD-SI-Zyb" secondAttribute="bottom" id="1ew-TI-afb"/>
                             <constraint firstItem="0ax-8F-L3h" firstAttribute="trailing" secondItem="qu7-sz-cIq" secondAttribute="trailing" constant="10" id="78P-Gg-Apj"/>
+                            <constraint firstItem="0ax-8F-L3h" firstAttribute="trailing" secondItem="Y2c-JL-s8v" secondAttribute="trailing" constant="8" id="9GI-1Q-i31"/>
                             <constraint firstItem="qu7-sz-cIq" firstAttribute="top" secondItem="0ax-8F-L3h" secondAttribute="top" constant="8" id="Eo3-CT-KWK"/>
                             <constraint firstItem="ZjD-SI-Zyb" firstAttribute="top" secondItem="WsZ-Nq-0U8" secondAttribute="top" id="FBe-G6-b2E"/>
                             <constraint firstAttribute="trailing" secondItem="ZjD-SI-Zyb" secondAttribute="trailing" id="WWp-3v-9qn"/>
                             <constraint firstItem="ZjD-SI-Zyb" firstAttribute="leading" secondItem="WsZ-Nq-0U8" secondAttribute="leading" id="cfy-zz-Hpn"/>
+                            <constraint firstItem="Y2c-JL-s8v" firstAttribute="leading" secondItem="0ax-8F-L3h" secondAttribute="leading" constant="8" id="xIb-7b-f8q"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="0ax-8F-L3h"/>
                     </view>
                     <connections>
                         <outlet property="blurView" destination="ZjD-SI-Zyb" id="Ocp-u4-qCv"/>
+                        <outlet property="recordCountLabel" destination="iSx-FV-1lm" id="ddc-E0-vBY"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="8jB-0K-V6C" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <exit id="pe1-Xj-X0r" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="1994" y="-826"/>
+            <point key="canvasLocation" x="1813.5999999999999" y="-564.46776611694156"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="GGG-wS-vzn">
@@ -115,55 +177,9 @@
             </objects>
             <point key="canvasLocation" x="133.59999999999999" y="-564.46776611694156"/>
         </scene>
-        <!--Location View Controller-->
-        <scene sceneID="7mC-89-L5J">
-            <objects>
-                <viewController storyboardIdentifier="LocationViewController" id="28J-AL-bAT" customClass="LocationViewController" customModule="Hiker" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="Li2-O2-2OP">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <visualEffectView opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bIR-ij-b63">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                                <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="Ub9-EC-RWV">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                                    <subviews>
-                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ro7-Lv-Ldi">
-                                            <rect key="frame" x="324" y="28" width="41" height="33"/>
-                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                            <state key="normal" title="Done"/>
-                                            <connections>
-                                                <segue destination="xt4-36-NFe" kind="unwind" unwindAction="unwindToMap:" id="jA1-Ep-avt"/>
-                                            </connections>
-                                        </button>
-                                    </subviews>
-                                </view>
-                                <blurEffect style="light"/>
-                            </visualEffectView>
-                        </subviews>
-                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <constraints>
-                            <constraint firstItem="bIR-ij-b63" firstAttribute="leading" secondItem="Li2-O2-2OP" secondAttribute="leading" id="ACP-DI-NoB"/>
-                            <constraint firstAttribute="trailing" secondItem="bIR-ij-b63" secondAttribute="trailing" id="Gxu-ZM-ezv"/>
-                            <constraint firstItem="bIR-ij-b63" firstAttribute="top" secondItem="Li2-O2-2OP" secondAttribute="top" id="oE3-0C-x1H"/>
-                            <constraint firstItem="KWy-NP-S1A" firstAttribute="trailing" secondItem="Ro7-Lv-Ldi" secondAttribute="trailing" constant="10" id="oN1-Im-N42"/>
-                            <constraint firstAttribute="bottom" secondItem="bIR-ij-b63" secondAttribute="bottom" id="r92-wP-mgV"/>
-                            <constraint firstItem="Ro7-Lv-Ldi" firstAttribute="top" secondItem="KWy-NP-S1A" secondAttribute="top" constant="8" id="yFm-KH-mwU"/>
-                        </constraints>
-                        <viewLayoutGuide key="safeArea" id="KWy-NP-S1A"/>
-                    </view>
-                    <connections>
-                        <outlet property="blurView" destination="bIR-ij-b63" id="TFN-9E-ZMW"/>
-                    </connections>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="Uxs-q2-vAZ" userLabel="First Responder" sceneMemberID="firstResponder"/>
-                <exit id="xt4-36-NFe" userLabel="Exit" sceneMemberID="exit"/>
-            </objects>
-            <point key="canvasLocation" x="1993" y="-146"/>
-        </scene>
     </scenes>
     <resources>
+        <image name="gps_marker" width="24" height="24"/>
         <image name="settings" width="25" height="25"/>
     </resources>
     <color key="tintColor" name="Action"/>

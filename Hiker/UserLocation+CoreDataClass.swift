@@ -9,8 +9,17 @@
 
 import Foundation
 import CoreData
+import MapKit
 
-
-public class UserLocation: NSManagedObject {
-
+public class UserLocation: NSManagedObject, MKAnnotation {
+    
+    public var coordinate: CLLocationCoordinate2D {
+        return CLLocationCoordinate2D(latitude: lat, longitude: long)
+    }
+    
+    public var title: String? {
+        DateFormatter.sharedFormatter.dateFormat = "MMMd-yy HH:mm"
+        let date = (timestamp as Date?) ?? Date()
+        return DateFormatter.sharedFormatter.string(from: date)
+    }
 }

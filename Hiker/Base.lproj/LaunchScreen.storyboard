@@ -4,7 +4,7 @@
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
-        <deployment identifier="iOS"/>
+        <deployment version="4400" identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
@@ -43,7 +43,8 @@ HIKER</string>
     </scenes>
     <resources>
         <namedColor name="Background">
-            <color red="0.62800002098083496" green="0.84399998188018799" blue="0.50499999523162842" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+            <color red="0.5820000171661377" green="0.77499997615814209" blue="0.51999998092651367" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
         </namedColor>
     </resources>
+    <color key="tintColor" name="Background"/>
 </document>

@@ -20,8 +20,5 @@ extension UserLocation {
     @NSManaged public var lat: Double
     @NSManaged public var long: Double
     @NSManaged public var timestamp: NSDate?
-    @NSManaged public var altitude: Double
-    @NSManaged public var horizontalAccuracy: Double
-    @NSManaged public var verticalAccuracy: Double
 
 }
